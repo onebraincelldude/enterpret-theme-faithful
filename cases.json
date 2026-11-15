@@ -1,0 +1,21 @@
+{
+  "gates": {"max_unsupported_summaries": 0, "max_misassigned": 0, "min_coverage": 1.0},
+  "cases": [
+    {
+      "id": "app-store-reviews",
+      "verbatims": [
+        {"id": "v1", "text": "export to csv is broken since the last update"},
+        {"id": "v2", "text": "love the new dashboard, much faster than before"},
+        {"id": "v3", "text": "csv export fails with a timeout error on large files"},
+        {"id": "v4", "text": "dashboard loads in half the time now, great work"},
+        {"id": "v5", "text": "please add dark mode, my eyes hurt at night"},
+        {"id": "v6", "text": "dark mode would make this perfect for late work"}
+      ],
+      "themes": {
+        "csv-export-broken": {"must_include": ["v1", "v3"], "must_not_include": ["v2", "v4", "v5", "v6"], "support_terms": ["csv", "export", "broken", "fails", "timeout"]},
+        "faster-dashboard": {"must_include": ["v2", "v4"], "must_not_include": ["v1", "v3", "v5", "v6"], "support_terms": ["dashboard", "faster", "loads", "half the time"]},
+        "dark-mode-request": {"must_include": ["v5", "v6"], "must_not_include": ["v1", "v2", "v3", "v4"], "support_terms": ["dark mode", "night", "late work"]}
+      }
+    }
+  ]
+}
